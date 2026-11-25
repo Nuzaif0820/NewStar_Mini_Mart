@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">N Mart POS</string>
+    <string name="title_activity_main">N Mart POS</string>
+    <string name="package_name">com.nmart.pos</string>
+    <string name="custom_url_scheme">com.nmart.pos</string>
+</resources>

@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Mobile Safe Area Inset Helpers (Clears Camera Punch-hole, Notch & Status Bar) */
+.header-safe-top {
+  padding-top: max(env(safe-area-inset-top, 0px), 48px) !important;
+  padding-bottom: 12px !important;
+}
+@media (min-width: 640px) {
+  .header-safe-top {
+    padding-top: max(env(safe-area-inset-top, 0px), 14px) !important;
+    padding-bottom: 14px !important;
+  }
+}
+
+.content-safe-bottom {
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), 80px) !important;
+}
+
+/* ============================================================== */
+/* THEMES: Light, OLED Black, Royal Emerald, Ocean Blue, Dark     */
+/* ============================================================== */
+
+/* 1. Supermarket Day (Crisp Light Mode) */
+.theme-light {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+.theme-light body {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+.theme-light .bg-slate-950,
+.theme-light .bg-slate-900 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+.theme-light .bg-slate-800,
+.theme-light .bg-slate-800\/80,
+.theme-light .bg-slate-800\/90,
+.theme-light .bg-slate-800\/60 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+.theme-light .bg-slate-900\/90,
+.theme-light .bg-slate-900\/80 {
+  background-color: #f8fafc !important;
+}
+.theme-light .border-slate-800,
+.theme-light .border-slate-700,
+.theme-light .border-slate-700\/80,
+.theme-light .border-slate-700\/60 {
+  border-color: #cbd5e1 !important;
+}
+.theme-light .text-white {
+  color: #0f172a !important;
+}
+.theme-light .text-slate-400,
+.theme-light .text-slate-300 {
+  color: #475569 !important;
+}
+.theme-light .text-slate-500 {
+  color: #64748b !important;
+}
+.theme-light input,
+.theme-light select,
+.theme-light textarea {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* 2. Midnight OLED (True Black #000000 for Mobile Battery Saving) */
+.theme-oled {
+  background-color: #000000 !important;
+  color: #f4f4f5 !important;
+}
+.theme-oled .bg-slate-950,
+.theme-oled .bg-slate-900 {
+  background-color: #000000 !important;
+}
+.theme-oled .bg-slate-800,
+.theme-oled .bg-slate-800\/80,
+.theme-oled .bg-slate-800\/90,
+.theme-oled .bg-slate-800\/60 {
+  background-color: #09090b !important;
+}
+.theme-oled .border-slate-800,
+.theme-oled .border-slate-700,
+.theme-oled .border-slate-700\/80 {
+  border-color: #27272a !important;
+}
+.theme-oled input,
+.theme-oled select,
+.theme-oled textarea {
+  background-color: #050505 !important;
+  border-color: #3f3f46 !important;
+}
+
+/* 3. Royal Emerald (Traditional Grocery & Supermarket Theme) */
+.theme-emerald {
+  background-color: #022c22 !important;
+  color: #f0fdf4 !important;
+}
+.theme-emerald .bg-slate-950,
+.theme-emerald .bg-slate-900 {
+  background-color: #022c22 !important;
+}
+.theme-emerald .bg-slate-800,
+.theme-emerald .bg-slate-800\/80,
+.theme-emerald .bg-slate-800\/90,
+.theme-emerald .bg-slate-800\/60 {
+  background-color: #064e3b !important;
+}
+.theme-emerald .border-slate-800,
+.theme-emerald .border-slate-700,
+.theme-emerald .border-slate-700\/80 {
+  border-color: #059669 !important;
+}
+.theme-emerald input,
+.theme-emerald select,
+.theme-emerald textarea {
+  background-color: #022c22 !important;
+  border-color: #047857 !important;
+}
+
+/* 4. Ocean Blue (Corporate Retail & Tech POS) */
+.theme-ocean {
+  background-color: #082f49 !important;
+  color: #f0f9ff !important;
+}
+.theme-ocean .bg-slate-950,
+.theme-ocean .bg-slate-900 {
+  background-color: #082f49 !important;
+}
+.theme-ocean .bg-slate-800,
+.theme-ocean .bg-slate-800\/80,
+.theme-ocean .bg-slate-800\/90,
+.theme-ocean .bg-slate-800\/60 {
+  background-color: #0c4a6e !important;
+}
+.theme-ocean .border-slate-800,
+.theme-ocean .border-slate-700,
+.theme-ocean .border-slate-700\/80 {
+  border-color: #0284c7 !important;
+}
+.theme-ocean input,
+.theme-ocean select,
+.theme-ocean textarea {
+  background-color: #082f49 !important;
+  border-color: #0369a1 !important;
+}
+
+/* Custom Keyframe animations */
+@keyframes scanLine {
+  0% {
+    top: 5%;
+  }
+  50% {
+    top: 90%;
+  }
+  100% {
+    top: 5%;
+  }
+}
+
+/* Print Styles for thermal receipts and label sticker sheets */
+@media print {
+  body {
+    background: transparent !important;
+    color: black !important;
+  }
+
+  .no-print, header, nav, footer, button {
+    display: none !important;
+  }
+
+  #printable-receipt {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  #printable-label-sheet {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  @page {
+    margin: 4mm;
+  }
+}

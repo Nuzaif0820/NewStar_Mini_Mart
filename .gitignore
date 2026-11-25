@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+*/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json.bak
+
+# Production & Build outputs
+dist/
+client/dist/
+build/
+bin/
+gen/
+out/
+
+# Environment files & Secrets
+.env
+.env.local
+.env.*.local
+client/.env
+server/.env
+
+# Local Databases, Backups & Uploads
+server/data/*.db
+server/data/*.db-shm
+server/data/*.db-wal
+server/backups/
+*.db
+*.sqlite
+
+# Android build outputs & configuration
+client/android/.gradle/
+client/android/build/
+client/android/app/build/
+client/android/local.properties
+client/android/.navigation/
+client/android/captures/
+client/android/gradle-dist/
+client/android/*.zip
+client/android/capacitor-cordova-android-plugins/
+client/android/app/src/main/assets/public/
+*.iml
+*.dex
+*.class
+
+# Android Packages & Archives
+*.apk
+*.aar
+*.aab
+*.zip
+
+# OS & IDE temporary files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

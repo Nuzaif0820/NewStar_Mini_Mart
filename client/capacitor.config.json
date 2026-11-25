@@ -1,0 +1,13 @@
+{
+  "appId": "com.nmart.pos",
+  "appName": "N Mart POS",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "cleartext": true,
+    "androidScheme": "http"
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+}
